@@ -10,9 +10,16 @@ var fn;
 var arr;
 var back;
 var result;
+var reg=/[5-9]/g;
 
+input.oninput = function () {
 
+  if (input.value.toString().match(reg)&&count % 2 == 1) {
 
+    input.classList.add('alert');
+
+  }
+}
 
 
 for (let tT of typeTogglers) {
