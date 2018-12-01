@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Kanit');
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Cookie|Kanit');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Cookie|Kanit|Neuton');
 .onwork {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 310px;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -12,8 +13,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 input {
+  width: 285px;
   margin: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
+  font-size: 20px;
+  box-shadow: 0 0 8px blue;
 }
 
 button {
@@ -50,15 +54,15 @@ button {
 
 .result {
   font-size: 21px;
-  color: blue;
+  color: #000080;
   margin: 18px;
-  font-family: 'Cookie', cursive;
+  font-family: 'Neuton', serif;
 }
 
 .result span
-{color:red;}
+{color:#ff0033;}
 
 .alert
 {
-  background: red;
+  background: #f8173e;
 }

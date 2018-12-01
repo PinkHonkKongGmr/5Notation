@@ -10,17 +10,21 @@ var fn;
 var arr;
 var back;
 var result;
-var reg=/[5-9]/g;
+var reg = /[5-9]/g;
+var attention;
 
-input.oninput = function () {
+function check() {
+  attention = false;
+  input.classList.remove('alert');
 
-  if (input.value.toString().match(reg)&&count % 2 == 1) {
-
+  if (input.value.match(reg) && count % 2 == 1) {
+    attention = true;
     input.classList.add('alert');
-
   }
+
 }
 
+input.oninput = check;
 
 for (let tT of typeTogglers) {
   {
@@ -28,6 +32,7 @@ for (let tT of typeTogglers) {
       typeTogglers[0].classList.toggle('hide');
       typeTogglers[1].classList.toggle('hide');
       count++;
+      check();
     }
   }
 }
@@ -44,11 +49,14 @@ translate.onclick = function() {
       num = num / five;
     }
     itog = operation.reverse().join('');
+    if (input.value == 0) {
+      itog = 0;
+    }
     show.innerHTML = "Результат перевода из <span>десятеричной</span> системы исчисления числа " + input.value + "<span> в пятиричную: </span>" + itog;
     operation = [];
   }
 
-  if (count % 2 == 1) {
+  if (count % 2 == 1 && !attention) {
 
     fn = input.value;
     arr = fn.toString().split('');
@@ -61,5 +69,9 @@ translate.onclick = function() {
       back--;
     }
     show.innerHTML = "Результат перевода из <span>пятиричной</span> системы исчисления числа " + input.value + "<span> в десятиричную:</span> " + result;
+  }
+
+  if (attention) {
+    show.innerHTML = "<span>Пятиричная система содержит только числовые символы диапазона 0-4</span>";
   }
 }
