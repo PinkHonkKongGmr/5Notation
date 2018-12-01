@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Поиск билетов</title>
-  <!-- <link rel='stylesheet' href='css/style.css'> -->
+  <link rel='stylesheet' href='css/style.css'>
 
 
 </head>
@@ -13,18 +13,20 @@
 
 <body>
 
-  <input type="number" name="" value="" class="push">
+  <div class="onwork">
+    <input type="number" name="" value="" class="field">
 
-  <button type="button" name="button" class="push" >в  5-ричной</button>
-
-  <input type="number" name="" class="push">
-  <button type="button" name="button" class="push">в 10-ричной</button>
+    <button type="button" name="button" class="typeToggler">10<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>5</button>
+    <button type="button" name="button" class="typeToggler hide">10<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>5</button>
+  </div>
+<button type="button" name="button" class="translate" style="margin-left:20px">Перевести</button>
 
   <div class="result">
 
   </div>
 
   <script src="js\script.js"></script>
+  <script src="https://use.fontawesome.com/550105d68c.js"></script>
 </body>
 
 </html>

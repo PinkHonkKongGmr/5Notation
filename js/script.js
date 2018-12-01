@@ -1,45 +1,58 @@
-var inp1=document.querySelectorAll('.push')[0];
-var inp2=document.querySelectorAll('.push')[2];
-var res1=document.querySelectorAll('.push')[1];
-var res2=document.querySelectorAll('.push')[3];
-var show = document.querySelectorAll('.result')[0];
-var itog;
-var num;
-
+var typeTogglers = document.querySelectorAll('.typeToggler');
+var translate = document.querySelector('.translate');
+var show = document.querySelector('.result');
+var input = document.querySelector('.field');
+var count = 0;
 const five = 5;
 var remainder;
-var operation=[];
-
-res1.onclick=function () {
-num= inp1.value;
-  while (num>0) {
-    remainder=num%five;
-    operation.push(remainder);
-    num-=remainder;
-    num=num/five;
+var operation = [];
+var fn;
+var arr;
+var back;
+var result;
 
 
+
+
+
+for (let tT of typeTogglers) {
+  {
+    tT.onclick = function() {
+      typeTogglers[0].classList.toggle('hide');
+      typeTogglers[1].classList.toggle('hide');
+      count++;
+    }
   }
-  itog=operation.reverse().join('');
-  show.innerHTML=itog;
 }
 
 
+translate.onclick = function() {
 
+  if (count % 2 == 0) {
+    num = input.value;
+    while (num > 0) {
+      remainder = num % five;
+      operation.push(remainder);
+      num -= remainder;
+      num = num / five;
+    }
+    itog = operation.reverse().join('');
+    show.innerHTML = "Результат перевода из <span>десятеричной</span> системы исчисления числа " + input.value + "<span> в пятиричную: </span>" + itog;
+    operation = [];
+  }
 
+  if (count % 2 == 1) {
 
+    fn = input.value;
+    arr = fn.toString().split('');
+    back = arr.length - 1;
+    result = 0
+    for (var i = 0; i < arr.length; i++) {
 
-
-var fn=40;
-var arr=fn.toString().split('');
-var back=arr.length-1;
-var result=0;
-for (var i = 0; i < arr.length; i++) {
-
-  arr[i]=arr[i]*Math.pow(10,back)/Math.pow(2,back);
-  result+=arr[i];
-  back--;
-
+      arr[i] = arr[i] * Math.pow(10, back) / Math.pow(2, back);
+      result += arr[i];
+      back--;
+    }
+    show.innerHTML = "Результат перевода из <span>пятиричной</span> системы исчисления числа " + input.value + "<span> в десятиричную:</span> " + result;
+  }
 }
-
-console.log(result);

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Kanit');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Cookie|Kanit');
+.onwork {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  margin: 20px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Kanit', sans-serif;
+  border: none;
+  letter-spacing: 2px;
+}
+
+.typeToggler {
+  font-size: 20px;
+}
+
+.typeToggler:nth-child(even) {
+  background: #7b68ee;
+}
+
+.typeToggler:nth-child(odd) {
+  background: #ffa000;
+}
+
+.translate {
+  font-size: 22px;
+}
+
+.translate:hover {
+  background: #d0f0c0;
+}
+
+.hide {
+  display: none;
+}
+
+.result {
+  font-size: 21px;
+  color: blue;
+  margin: 18px;
+  font-family: 'Cookie', cursive;
+}
+
+.result span
+{color:red;}
+
+.alert
+{
+  background: red;
+}
